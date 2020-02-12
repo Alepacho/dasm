@@ -1,3 +1,3 @@
-::gcc ./src/*.cpp -o ./release/dit.exe
+::for windows
 mingw32-make
 pause
