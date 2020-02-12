@@ -1,0 +1,7 @@
+SET: ra, %var;
+JMP: %_exit;
+
+var. 37;
+
+_exit.
+    SYS: 1, 0;

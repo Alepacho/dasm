@@ -1,0 +1,14 @@
+# +--------------------------------------+
+# | Simple Hello World! Example for DASM |
+# | Made by Alepacho, 2020.              |
+# +--------------------------------------+
+
+# System callback proc.
+SYS: 2, %text;                  # 2: Print; %text: get address of the string.
+SYS: 1, 0;                      # 1: Exit;  2: Return 0;
+
+text. "Hello World!", 0xA, 0;   # Section with char data.
+                                # 0xA: next line.
+                                # Every string always ends on zero.
+
+

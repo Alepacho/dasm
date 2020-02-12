@@ -1,0 +1,8 @@
+set: %0x110, 2;
+set: ra, 3;
+
+push: 1;
+push: %0x110;
+push: ra;
+
+SYS: 1, 0;

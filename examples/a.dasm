@@ -1,0 +1,6 @@
+JMP: %_main;
+
+_main.
+    SET: RAX, 1; # fix every time word value
+    SYS: 1, 0;
+    _dat. dw, 510;

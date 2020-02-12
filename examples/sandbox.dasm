@@ -1,0 +1,14 @@
+JMP: %_main;
+
+_main.
+    SET: RA, 16;
+    MOD: RA, 3;
+    SYS: 2, %_text;
+    JMP: %_exit;
+
+_exit.
+    SYS: 1, 0;
+
+# Store all data here.
+_text.
+    "Dasm Assebmler!", 0xA, 0;

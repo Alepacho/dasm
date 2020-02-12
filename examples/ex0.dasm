@@ -1,0 +1,10 @@
+_main.
+    JMP: %_test;
+    SET: ra, 110;
+
+_aye.
+    dw, 512;
+
+_test.
+    SET: ra, 220;
+    SYS: 1, 0;

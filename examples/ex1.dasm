@@ -1,0 +1,11 @@
+_main.                              # Optional. Only if you need jump here.
+    SET: ra, 10;                    # Setting RA to 10
+    ADD: ra, %var;                   # Then adding it to [var]
+    JMP: %_exit;                     # Jumping to exit section.
+    SET: rb, %var;                   # This code will never work, cuz we jump over it
+
+var. db, 37;
+
+_exit.
+    SYS: 1, 0;                       # We want to exit and return nothing
+
