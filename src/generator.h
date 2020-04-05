@@ -9,7 +9,7 @@ extern bool _debug;
 
 struct generator {
     private:
-        bool error = false;
+        bool error;
 
         void get_error(uint pos, string text1, string text2 = "") {
             cout << "[ERROR::" << pos << "] " << text1 << text2 << endl;

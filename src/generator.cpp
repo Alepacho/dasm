@@ -1,7 +1,7 @@
 #include "generator.h"
 
 generator::generator() {
-
+    error = false;
 }
 
 generator::~generator() {

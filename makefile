@@ -1,3 +1,6 @@
+# for Windows use Mingw-w64: 	mingw32-make
+# for UNIX:						make
+
 # Compiler [gcc / g++]
 CC = g++
 

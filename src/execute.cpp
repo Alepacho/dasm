@@ -2,6 +2,11 @@
 
 
 execute::execute(std::vector<byte> _binary) {
+    pc = 0;
+    memset(&reg, 0, sizeof(reg_u) * 4);
+    memset(&memory, 0, MEM_SIZE - 1);
+    working = true;
+
     cout << "Executing..." << endl;
     
     uint size = (uint)_binary.size();

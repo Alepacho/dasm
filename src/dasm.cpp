@@ -3,17 +3,19 @@
 #include "generator.h"
 #include "execute.h"
 
-bool _execute = true;
-bool _output  = false;
-bool _debug   = false;
+bool _execute;
+bool _output;
+bool _debug;
 
 int main(int argc, char *argv[]) {
+	_execute = true;
+	_output  = false;
+	_debug   = false;
+
 	cout << "Dasm!" << endl;
 	//
 	
 	if (argc > 1) {
-		
-
 		if (argc != 2) {
 			for (int i = argc - 1; i >= 2; i--) {
 				string _arg = string(argv[i]);

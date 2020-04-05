@@ -16,10 +16,10 @@ union reg_u {
 
 struct execute {
     private:
-        uint pc = 0;
-        reg_u reg[4] = {0};
-        byte memory[MEM_SIZE] = {0};
-        bool working = true;
+        uint pc;
+        reg_u reg[4];
+        byte memory[MEM_SIZE];
+        bool working;
         stack<word> data;
     public:
         execute(std::vector<byte> _binary);

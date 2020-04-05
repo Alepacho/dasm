@@ -2,6 +2,8 @@
 
 analyzer::analyzer(string _source) {
     source = _source;
+    error = false;
+    line = 0;
 }
 
 analyzer::~analyzer() {
@@ -123,7 +125,7 @@ bool analyzer::proceed() {
                     if (_flag == false) {
                         token_s _token;
                         if (address == true) {
-                            _token = {.type = TOKEN::ADDRESS, .value = _val};
+                            _token = (token_s){.type = TOKEN::ADDRESS, .value = _val};
                             address = false;
                         } else {
                             token_s _prev = token_list[token_list.size() - 1];
@@ -135,14 +137,14 @@ bool analyzer::proceed() {
                                         cout << "[ERROR::" << line << "]: CAN'T USE WORD VALUE FOR BYTE REGISTER!" << endl;
                                         error = true;
                                     }
-                                    _token = {.type = TOKEN::BYTE, .value = _val};
+                                    _token = (token_s){.type = TOKEN::BYTE, .value = _val};
                                     _flag2 = true;
                                 } else if (is_rx(stoi(_prev.value))) {
                                     if (stoi(_val) > 65535) {
                                         cout << "[ERROR::" << line << "]: TOO BIG VALUE FOR WORD REGISTER!" << endl;
                                         error = true;
                                     }
-                                    _token = {.type = TOKEN::WORD, .value = _val};
+                                    _token = (token_s){.type = TOKEN::WORD, .value = _val};
                                     _flag2 = true;
                                 }
                             }
@@ -155,14 +157,14 @@ bool analyzer::proceed() {
                                             cout << "[ERROR::" << line << "]: TOO BIG VALUE!" << endl;
                                             error = true;
                                         }
-                                        _token = {.type = TOKEN::BYTE, .value = _val};
+                                        _token = (token_s){.type = TOKEN::BYTE, .value = _val};
                                     } break;
                                     case DTYPE::DW: {
                                         if (stoi(_val) > 65535) {
                                             cout << "[ERROR::" << line << "]: TOO BIG VALUE!" << endl;
                                             error = true;
                                         }
-                                        _token = {.type = TOKEN::WORD, .value = _val};
+                                        _token = (token_s){.type = TOKEN::WORD, .value = _val};
                                     } break;
                                 }
                             }

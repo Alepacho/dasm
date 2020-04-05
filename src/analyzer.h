@@ -10,8 +10,8 @@ extern bool _debug;
 struct analyzer {
     private:
         string source;
-        bool error = false;
-        int line = 0;
+        bool error;
+        int line;
     public:
         std::vector<token_s> token_list;
 
